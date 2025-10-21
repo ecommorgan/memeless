@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cookies Policy | Memeless</title>
+<link href="{{ url_for('static', filename='img/favicon.svg') }}" rel="icon" type="image/png"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Merriweather:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            background-color: #121212;
+            color: #d6d6d6;
+            font-family: 'Merriweather', serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 60px auto;
+            background: #1b1b1b;
+            padding: 40px 50px;
+            border-radius: 12px;
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.08);
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.2em;
+            color: #00ffff;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #00b8b8;
+            margin-top: 25px;
+            font-size: 1.3em;
+        }
+        p, li {
+            font-size: 1rem;
+            color: #d0d0d0;
+        }
+        a {
+            color: #00ffff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        ul {
+            margin-left: 20px;
+        }
+        @media (max-width: 700px) {
+            .container {
+                margin: 20px;
+                padding: 25px;
+            }
+        }
+    </style>
+<!-- SEO META TAGS -->
+<meta content="{{ meta_title or 'Memeless – The MemeFi Revolution' }}" name="title"/>
+<meta content="{{ meta_description or 'Join the MemeFi revolution. Create, earn and share memes on Binance Smart Chain.' }}" name="description"/>
+<meta content="{{ meta_keywords or 'Memeless, MemeFi, crypto, token, airdrop, presale, Binance, DeFi' }}" name="keywords"/>
+<meta content="index, follow" name="robots"/>
+<meta content="Memeless Team" name="author"/>
+<link href="https://memeless.io{{ request.path }}" rel="canonical"/>
+<!-- Open Graph -->
+<meta content="{{ meta_title or 'Memeless – The MemeFi Revolution' }}" property="og:title"/>
+<meta content="{{ meta_description or 'Join the MemeFi revolution. Create, earn and share memes on Binance Smart Chain.' }}" property="og:description"/>
+<meta content="https://memeless.io/static/images/meta-banner.png" property="og:image"/>
+<meta content="{{ request.url }}" property="og:url"/>
+<meta content="website" property="og:type"/>
+<!-- Twitter -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="{{ meta_title or 'Memeless – The MemeFi Revolution' }}" name="twitter:title"/>
+<meta content="{{ meta_description or 'Join the MemeFi revolution. Create, earn and share memes on Binance Smart Chain.' }}" name="twitter:description"/>
+<meta content="{{ url_for('static', filename='img/memeless-logo.png', _external=True) }}" name="twitter:image"/>
+<!-- JSON-LD Organization (minimal) -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Memeless",
+    "url": "{{ request.url_root }}",
+    "logo": "{{ url_for('static', filename='img/memeless-logo.png', _external=True) }}",
+    "sameAs": [
+      "https://x.com/YourXProfile",
+      "https://t.me/YourTelegramSupport"
+    ]
+  }
+  </script>
+<style>
+/* ===========================================
+   Phase 5 Step 8 - Dynamic Animation System (Medium Motion)
+   =========================================== */
+
+@keyframes pageEntrance {
+  from { opacity: 0; transform: translateY(40px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+body {
+  animation: pageEntrance 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  overflow-x: hidden;
+}
+
+/* Scroll Reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px) scale(0.98);
+  transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform, opacity;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: drop-shadow(0 6px 10px rgba(0,162,255,0.15));
+}
+
+/* Button, CTA and Card Hover Animations */
+.card, .cta, .btn, button, a {
+  transition: all 0.3s ease;
+}
+.card:hover, .cta:hover, .btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 194, 255, 0.4);
+}
+.btn:active, button:active {
+  transform: scale(0.96);
+}
+
+/* Footer & Social Icon Glow */
+footer a, .social-icon {
+  transition: all 0.4s ease;
+}
+footer a:hover, .social-icon:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 10px rgba(0, 194, 255, 0.5));
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .reveal {
+    transform: translateY(20px) scale(0.99);
+    transition-duration: 0.9s;
+  }
+  .card:hover, .btn:hover, .cta:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  footer a:hover, .social-icon:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 6px rgba(0, 194, 255, 0.3));
+  }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Cookies Policy</h1>
+<p><em>Last updated: {{ last_updated or "October 2025" }}</em></p>
+<h2>1. Introduction</h2>
+<p>When you use the Memeless website or app (the “Service”), we and our partners may use cookies and similar technologies to enhance your experience, analyze usage, and ensure the proper functioning of our Service.</p>
+<h2>2. What Are Cookies?</h2>
+<p>Cookies are small text files that are stored on your device when you visit websites or use applications. They allow us to remember your preferences, recognize your device, and improve how the Service performs.</p>
+<h2>3. How We Use Cookies</h2>
+<p>We use cookies for a variety of purposes, including:</p>
+<ul>
+<li>Ensuring essential site functionality, such as login and security</li>
+<li>Remembering user preferences and customization settings</li>
+<li>Analyzing traffic and improving site performance</li>
+<li>Delivering relevant content or advertisements</li>
+<li>Supporting customer support and troubleshooting</li>
+</ul>
+<h2>4. Types of Cookies We Use</h2>
+<p>We use the following types of cookies:</p>
+<ul>
+<li><strong>Necessary Cookies:</strong> Required for basic operation and security. Without these, the site may not function properly.</li>
+<li><strong>Functionality Cookies:</strong> Allow the Service to remember choices such as theme, language, and region.</li>
+<li><strong>Analytics Cookies:</strong> Collect information on how visitors use our Service, such as which pages are most visited.</li>
+<li><strong>Advertising Cookies:</strong> Used by third parties to deliver personalized ads or measure campaign effectiveness.</li>
+</ul>
+<h2>5. Managing Cookies</h2>
+<p>You can control or delete cookies through your browser settings. Most browsers allow you to block cookies or receive alerts before they are placed. However, disabling some cookies may affect the functionality of the Service.</p>
+<p>You can also use online resources like <a href="https://www.aboutcookies.org" target="_blank">AboutCookies.org</a> or <a href="https://www.youronlinechoices.com" target="_blank">YourOnlineChoices.com</a> for more information on managing cookies.</p>
+<h2>6. Third-Party Cookies</h2>
+<p>Some cookies may be placed by third-party services such as analytics or advertising providers. We do not control these cookies. Please review their respective cookie and privacy policies for details.</p>
+<h2>7. Updates to This Policy</h2>
+<p>We may update this Cookies Policy from time to time. The date at the top will always show when it was last updated. Continued use of the Service means you accept any updates to this Policy.</p>
+<h2>8. Contact Us</h2>
+<p>If you have any questions about our use of cookies, please <a href="{{ url_for('contact') }}">contact us</a> or email <strong>support@memeless.io</strong>.</p>
+</div>
+
+<script>
+// ===========================================
+// Phase 5 Step 8 - Dynamic Animations System
+// ===========================================
+
+// Config switch for global animation control
+const animationConfig = {
+  animations: true // Set to false to disable all animations site-wide
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  if (!animationConfig.animations) return;
+
+  // Scroll-based reveal animations
+  const revealEls = document.querySelectorAll(".reveal");
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => observer.observe(el));
+});
+</script>
+
+</body>
+</html>
