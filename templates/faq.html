@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FAQs | Memeless</title>
+<link href="{{ url_for('static', filename='img/favicon.svg') }}" rel="icon" type="image/png"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Merriweather:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="{{ url_for('static', filename='css/faq.css') }}" rel="stylesheet"/>
+<!-- SEO META TAGS -->
+<meta content="{{ meta_title or 'Memeless – The MemeFi Revolution' }}" name="title"/>
+<meta content="{{ meta_description or 'Join the MemeFi revolution. Create, earn and share memes on Binance Smart Chain.' }}" name="description"/>
+<meta content="{{ meta_keywords or 'Memeless, MemeFi, crypto, token, airdrop, presale, Binance, DeFi' }}" name="keywords"/>
+<meta content="index, follow" name="robots"/>
+<meta content="Memeless Team" name="author"/>
+<link href="https://memeless.io{{ request.path }}" rel="canonical"/>
+<!-- Open Graph -->
+<meta content="{{ meta_title or 'Memeless – The MemeFi Revolution' }}" property="og:title"/>
+<meta content="{{ meta_description or 'Join the MemeFi revolution. Create, earn and share memes on Binance Smart Chain.' }}" property="og:description"/>
+<meta content="https://memeless.io/static/images/meta-banner.png" property="og:image"/>
+<meta content="{{ request.url }}" property="og:url"/>
+<meta content="website" property="og:type"/>
+<!-- Twitter -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="{{ meta_title or 'Memeless – The MemeFi Revolution' }}" name="twitter:title"/>
+<meta content="{{ meta_description or 'Join the MemeFi revolution. Create, earn and share memes on Binance Smart Chain.' }}" name="twitter:description"/>
+<meta content="{{ url_for('static', filename='img/memeless-logo.png', _external=True) }}" name="twitter:image"/>
+<!-- JSON-LD Organization (minimal) -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Memeless",
+    "url": "{{ request.url_root }}",
+    "logo": "{{ url_for('static', filename='img/memeless-logo.png', _external=True) }}",
+    "sameAs": [
+      "https://x.com/YourXProfile",
+      "https://t.me/YourTelegramSupport"
+    ]
+  }
+  </script>
+<style>
+/* ===========================================
+   Phase 5 Step 8 - Dynamic Animation System (Medium Motion)
+   =========================================== */
+
+@keyframes pageEntrance {
+  from { opacity: 0; transform: translateY(40px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+body {
+  animation: pageEntrance 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  overflow-x: hidden;
+}
+
+/* Scroll Reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px) scale(0.98);
+  transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform, opacity;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: drop-shadow(0 6px 10px rgba(0,162,255,0.15));
+}
+
+/* Button, CTA and Card Hover Animations */
+.card, .cta, .btn, button, a {
+  transition: all 0.3s ease;
+}
+.card:hover, .cta:hover, .btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 194, 255, 0.4);
+}
+.btn:active, button:active {
+  transform: scale(0.96);
+}
+
+/* Footer & Social Icon Glow */
+footer a, .social-icon {
+  transition: all 0.4s ease;
+}
+footer a:hover, .social-icon:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 10px rgba(0, 194, 255, 0.5));
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .reveal {
+    transform: translateY(20px) scale(0.99);
+    transition-duration: 0.9s;
+  }
+  .card:hover, .btn:hover, .cta:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  footer a:hover, .social-icon:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 6px rgba(0, 194, 255, 0.3));
+  }
+}
+</style>
+</head>
+<body>
+<div class="faq-container">
+<h1>Frequently Asked Questions</h1>
+<div class="faq-item">
+<button class="faq-question">1. What is Memeless?</button>
+<div class="faq-answer">Memeless is a MemeFi ecosystem — where memes meet decentralized finance. It combines token rewards, wallet integration, and community engagement in one platform.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">2. What makes Memeless different from other meme tokens?</button>
+<div class="faq-answer">Unlike hype-only meme coins, Memeless delivers real use cases — airdrops, staking, wallet integration, and community-driven incentives built on trust and transparency.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">3. Do I need a crypto wallet to use Memeless?</button>
+<div class="faq-answer">Yes. Connecting your wallet allows you to receive tokens, claim airdrops, and interact with blockchain features securely.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">4. Is connecting my wallet safe?</button>
+<div class="faq-answer">Absolutely. Memeless only requests read-only access to your wallet for authentication. We never ask for or store your private keys.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">5. Which wallets are supported?</button>
+<div class="faq-answer">We currently support MetaMask, Trust Wallet, and WalletConnect. More wallet integrations are coming soon.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">6. How do I claim free airdrop tokens?</button>
+<div class="faq-answer">Once you connect your wallet, navigate to the Airdrop section on your dashboard. Follow the on-screen steps to claim available rewards.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">7. What can I do on the Memeless dashboard?</button>
+<div class="faq-answer">You can check your balance, monitor transactions, view ongoing campaigns, and invite friends — all from one unified dashboard.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">8. Why is my wallet not connecting or showing tokens?</button>
+<div class="faq-answer">Ensure your browser extension or mobile wallet app is up to date. Also, confirm that you’re connected to the correct blockchain network (usually Binance Smart Chain).</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">9. Can I buy tokens directly from the app?</button>
+<div class="faq-answer">Yes. You’ll find a Buy Memeless button within your dashboard that links to supported DEXs for quick purchases.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">10. How do I secure my Memeless tokens?</button>
+<div class="faq-answer">Keep your recovery phrase and private keys offline. Use a hardware wallet for extra safety — and never share them with anyone.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">11. I forgot my password or can’t log in — what should I do?</button>
+<div class="faq-answer">Use the Reset Password option on the login page. If issues persist, contact our support team via the Contact Us page.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">12. How can I reach support or learn more?</button>
+<div class="faq-answer">You can reach us directly via our Contact page or through our verified social channels listed in the footer of the site.</div>
+</div>
+</div>
+<script src="{{ url_for('static', filename='js/faq_accordion.js') }}"></script>
+
+<script>
+// ===========================================
+// Phase 5 Step 8 - Dynamic Animations System
+// ===========================================
+
+// Config switch for global animation control
+const animationConfig = {
+  animations: true // Set to false to disable all animations site-wide
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  if (!animationConfig.animations) return;
+
+  // Scroll-based reveal animations
+  const revealEls = document.querySelectorAll(".reveal");
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => observer.observe(el));
+});
+</script>
+
+</body>
+</html>
