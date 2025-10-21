@@ -1,1 +1,0 @@
-Run: python app.py\nInstall: pip install -r requirements.txt\nREFERRAL_BONUS in app.py
