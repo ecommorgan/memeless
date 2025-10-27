@@ -1064,9 +1064,7 @@ a:hover, button:hover, .btn:hover {
     Memeless — All rights reserved.
    </div>
   </footer>
-  <audio id="successSound" loop="" preload="auto">
-   <source src="assets/sounds/success.mp3" type="audio/mp3"/>
-  </audio>
+  <audio id="successSound" src="assets/sounds/success.mp3"></audio>
   <script>
    document.getElementById('yy').textContent=new Date().getFullYear();
 async function loadPrices(){try{const r=await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,binancecoin,solana,dogecoin&vs_currencies=usd&include_24hr_change=true',{cache:'no-store'});const j=await r.json();const map=[['BTC','bitcoin'],['ETH','ethereum'],['BNB','binancecoin'],['SOL','solana'],['DOGE','dogecoin']];const el=document.getElementById('ticker');el.innerHTML=map.map(([s,id])=>{const p=j[id]?.usd??0;const ch=j[id]?.usd_24h_change??0;const cls=ch>=0?'up':'down';const sign=ch>=0?'+':'';return `<div class='pair'><small>${s}</small><span class='chip'>$${p.toLocaleString(undefined,{maximumFractionDigits:p<1?6:2})}</span><small class='${cls}'>${sign}${ch.toFixed(2)}%</small></div>`;}).join('');}catch(e){console.warn(e)}}
