@@ -475,13 +475,9 @@ a:hover, button:hover, .btn:hover {
     <div class="brand">
      <img alt="Memeless" class="logo" onerror="this.src='{{ url_for('static', filename='img/logo.svg') }}'" src="{{ url_for('static', filename='img/memeless-logo.png') }}"/>
      <div class="title">
-      ME ME LESS — Control Center
+      MEMELESS — Control Center
      </div>
     </div>
-    <div class="nav-right" style="display:flex;gap:10px;align-items:center;">
-     <span class="btn" id="walletChip" style="background:#0b1220;border:1px solid rgba(255,255,255,.12)">
-      Wallet: --
-     </span>
      <button class="btn" id="disconnectBtn" style="border-color:#ff4d4d">
       Disconnect Wallet/Logout
      </button>
