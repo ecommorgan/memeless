@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-
 <html lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Memeless — Dashboard v2</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&amp;family=Orbitron:wght@500;700&amp;display=swap" rel="stylesheet"/>
-<style>
-    :root{--bg:#05070a;--text:#e6f0ff;--muted:#9ab0d6;--card:#0b1220;--card2:#0d1526;--blue:#2a77ff;--cyan:#00c2ff;--violet:#7a3cff;--magenta:#d14dff;--neon:#23ff64;--b:1px solid rgba(255,255,255,.08);--shadow:0 12px 30px rgba(0,0,0,.35);--glow:0 0 22px rgba(42,119,255,.35)}
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Memeless — Dashboard v2
+  </title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&amp;family=Orbitron:wght@500;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   :root{--bg:#05070a;--text:#e6f0ff;--muted:#9ab0d6;--card:#0b1220;--card2:#0d1526;--blue:#2a77ff;--cyan:#00c2ff;--violet:#7a3cff;--magenta:#d14dff;--neon:#23ff64;--b:1px solid rgba(255,255,255,.08);--shadow:0 12px 30px rgba(0,0,0,.35);--glow:0 0 22px rgba(42,119,255,.35)}
     *{box-sizing:border-box} html,body{height:100%} body{margin:0;color:var(--text);font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(1200px 800px at -10% -10%, rgba(122,60,255,.20), transparent 60%),radial-gradient(1200px 800px at 110% 10%, rgba(0,194,255,.16), transparent 60%),var(--bg);overflow-x:hidden}
     #stars{position:fixed;inset:0;z-index:-1}
     .ticker-wrap{position:fixed;top:0;left:0;right:0;z-index:9999;background:linear-gradient(90deg, rgba(10,16,28,.86), rgba(7,12,26,.86));border-bottom:var(--b);backdrop-filter: blur(8px)}
@@ -27,27 +28,27 @@
     .reveal{opacity:0;transform:translateY(12px);transition:all .6s ease}.reveal.show{opacity:1;transform:none}
     @media (max-width:980px){header{padding-top:96px}.hero-grid{grid-template-columns:1fr}.refgrid{grid-template-columns:1fr;gap:10px}.tips{left:12px;right:12px;width:auto}}
   </style>
-<!-- SEO META TAGS -->
-<meta content="{{ meta_title or 'Memeless – The MemeFi Revolution' }}" name="title"/>
-<meta content="{{ meta_description or 'Join the MemeFi revolution. Create, earn and share memes on Binance Smart Chain.' }}" name="description"/>
-<meta content="{{ meta_keywords or 'Memeless, MemeFi, crypto, token, airdrop, presale, Binance, DeFi' }}" name="keywords"/>
-<meta content="index, follow" name="robots"/>
-<meta content="Memeless Team" name="author"/>
-<link href="https://memeless.io{{ request.path }}" rel="canonical"/>
-<!-- Open Graph -->
-<meta content="{{ meta_title or 'Memeless – The MemeFi Revolution' }}" property="og:title"/>
-<meta content="{{ meta_description or 'Join the MemeFi revolution. Create, earn and share memes on Binance Smart Chain.' }}" property="og:description"/>
-<meta content="https://memeless.io/static/images/meta-banner.png" property="og:image"/>
-<meta content="{{ request.url }}" property="og:url"/>
-<meta content="website" property="og:type"/>
-<!-- Twitter -->
-<meta content="summary_large_image" name="twitter:card"/>
-<meta content="{{ meta_title or 'Memeless – The MemeFi Revolution' }}" name="twitter:title"/>
-<meta content="{{ meta_description or 'Join the MemeFi revolution. Create, earn and share memes on Binance Smart Chain.' }}" name="twitter:description"/>
-<meta content="{{ url_for('static', filename='img/memeless-logo.png', _external=True) }}" name="twitter:image"/>
-<!-- JSON-LD Organization (minimal) -->
-<script type="application/ld+json">
-  {
+  <!-- SEO META TAGS -->
+  <meta content="{{ meta_title or 'Memeless – The MemeFi Revolution' }}" name="title"/>
+  <meta content="{{ meta_description or 'Join the MemeFi revolution. Create, earn and share memes on Binance Smart Chain.' }}" name="description"/>
+  <meta content="{{ meta_keywords or 'Memeless, MemeFi, crypto, token, airdrop, presale, Binance, DeFi' }}" name="keywords"/>
+  <meta content="index, follow" name="robots"/>
+  <meta content="Memeless Team" name="author"/>
+  <link href="https://memeless.io{{ request.path }}" rel="canonical"/>
+  <!-- Open Graph -->
+  <meta content="{{ meta_title or 'Memeless – The MemeFi Revolution' }}" property="og:title"/>
+  <meta content="{{ meta_description or 'Join the MemeFi revolution. Create, earn and share memes on Binance Smart Chain.' }}" property="og:description"/>
+  <meta content="/static/images/memeless-logo.png" property="og:image"/>
+  <meta content="{{ request.url }}" property="og:url"/>
+  <meta content="website" property="og:type"/>
+  <!-- Twitter -->
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="{{ meta_title or 'Memeless – The MemeFi Revolution' }}" name="twitter:title"/>
+  <meta content="{{ meta_description or 'Join the MemeFi revolution. Create, earn and share memes on Binance Smart Chain.' }}" name="twitter:description"/>
+  <meta content="{{ url_for('static', filename='img/memeless-logo.png', _external=True) }}" name="twitter:image"/>
+  <!-- JSON-LD Organization (minimal) -->
+  <script type="application/ld+json">
+   {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Memeless",
@@ -59,8 +60,9 @@
     ]
   }
   </script>
-<meta content="noindex, nofollow" name="robots"/><style>
-/* ===========================================
+  <meta content="noindex, nofollow" name="robots"/>
+  <style>
+   /* ===========================================
    Phase 5 Step 7 - Theme Toggle (Dashboard + Login)
    =========================================== */
 
@@ -116,18 +118,18 @@ a:hover, button:hover, .btn:hover {
   background: var(--accent-color);
   color: var(--bg-color);
 }
-</style>
-<style>
-/* === Theme Toggle Position Fix (below price ticker) === */
+  </style>
+  <style>
+   /* === Theme Toggle Position Fix (below price ticker) === */
 .theme-toggle {
   position: fixed;
   top: 60px;
   right: 20px;
   z-index: 1000;
 }
-</style>
-<style>
-/* ===========================================
+  </style>
+  <style>
+   /* ===========================================
    Phase 5 Step 7.2 - Balanced Light Theme Adjustment
    =========================================== */
 
@@ -164,9 +166,9 @@ a:hover, button:hover, .btn:hover {
 .dashboard-container, .section, main, .login-container {
   transition: background 0.3s ease, color 0.3s ease;
 }
-</style>
-<style>
-/* Smart UI - Dashboard components */
+  </style>
+  <style>
+   /* Smart UI - Dashboard components */
 .smart-tooltip {
   position: relative;
   cursor: pointer;
@@ -281,9 +283,9 @@ a:hover, button:hover, .btn:hover {
   50% { transform: scale(1.35); opacity: 0.6; }
   100% { transform: scale(1); opacity: 1; }
 }
-</style>
-<style>
-/* Airdrop Info Section */
+  </style>
+  <style>
+   /* Airdrop Info Section */
 #airdrop-info {
   margin-top: 28px;
   padding: 26px;
@@ -329,9 +331,9 @@ a:hover, button:hover, .btn:hover {
   line-height: 1.7;
   margin-bottom: 6px;
 }
-</style>
-<style>
-/* Fix for Airdrop Info Layout */
+  </style>
+  <style>
+   /* Fix for Airdrop Info Layout */
 .airdrop-info-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(320px, 1fr));
@@ -344,9 +346,9 @@ a:hover, button:hover, .btn:hover {
     grid-template-columns: 1fr; /* Stack on smaller screens */
   }
 }
-</style>
-<style>
-/* Optimized Airdrop Info Layout (Compact + Mobile Responsive) */
+  </style>
+  <style>
+   /* Optimized Airdrop Info Layout (Compact + Mobile Responsive) */
 #airdrop-info {
   padding: 18px 22px;
   border-radius: 14px;
@@ -406,12 +408,12 @@ a:hover, button:hover, .btn:hover {
     font-size: 13.5px;
   }
 }
-</style>
-</head>
-<body>
-<!-- Floating shortcuts and dashboard anchors injected by Phase5 -->
-<style>
-html { scroll-behavior: smooth; }
+  </style>
+ </head>
+ <body>
+  <!-- Floating shortcuts and dashboard anchors injected by Phase5 -->
+  <style>
+   html { scroll-behavior: smooth; }
 .floating-shortcuts {
   position: fixed;
   left: 18px;
@@ -420,6 +422,7 @@ html { scroll-behavior: smooth; }
   display: flex;
   flex-direction: column;
   gap: 10px;
+  transition: opacity .3s ease, transform .3s ease, bottom .3s ease;
 }
 .floating-shortcuts a {
   background: rgba(0,255,255,0.12);
@@ -438,114 +441,253 @@ html { scroll-behavior: smooth; }
   background: rgba(0,255,255,0.18);
   color: #001818;
 }
-/* mobile collapse */
-@media (max-width:600px) {
-  .floating-shortcuts { right: 10px; bottom: 12px; gap:6px; }
-  .floating-shortcuts a { padding:8px 10px; font-size:14px; border-radius:8px; }
+@media (max-width: 768px) {
+  .floating-shortcuts {
+    right: 14px;
+    left: auto;
+    gap: 8px;
+    bottom: 80px; /* lifted above mobile UI elements */
+  }
+  .floating-shortcuts a {
+    padding: 8px 10px;
+    font-size: 14px;
+    border-radius: 8px;
+  }
 }
-/* anchor sections style */
-#airdrop, #presale {
-  padding: 40px 20px;
-  margin: 20px auto;
-  max-width: 1100px;
-  background: rgba(11,11,11,0.45);
-  border: 1px solid rgba(0,255,255,0.06);
-  border-radius: 12px;
-  box-shadow: 0 6px 30px rgba(0,0,0,0.5);
-}
-</style>
-<div class="floating-shortcuts">
-<a href="#airdrop">💰 Airdrop</a>
-<a href="#presale">🚀 Presale</a>
-</div>
-<!-- Add placeholder anchor sections if not present - content can be replaced in dashboard implementation -->
-<canvas id="stars"></canvas>
-<div class="ticker-wrap"><div class="ticker" id="ticker"></div></div>
-<header>
-<nav class="nav">
-<div class="brand">
-<img alt="Memeless" class="logo" onerror="this.src='{{ url_for('static', filename='img/logo.svg') }}'" src="{{ url_for('static', filename='img/memeless-logo.png') }}"/>
-<div class="title">ME ME LESS — Control Center</div>
-</div>
-<div class="nav-right" style="display:flex;gap:10px;align-items:center;">
-<span class="btn" id="walletChip" style="background:#0b1220;border:1px solid rgba(255,255,255,.12)">Wallet: --</span>
-<button class="btn" id="disconnectBtn" style="border-color:#ff4d4d">Disconnect Wallet/Logout</button>
-</div>
-</nav>
-</header>
-
-<marquee direction="left" height="100px" style=" color: #ffac02; " width="100%">
-<b>Binance</b> will list <b> MEMELESS (MEME) at 2025-10-31 14:00 (UTC)</b></marquee>
-
-<main>
-<section class="card hero-grid reveal">
-<div>
-<section aria-label="Airdrop Section" id="airdrop">
-<h2>💰 Airdrop Live</h2>
-<p>Claim airdrop tokens and view eligibility criteria here.</p>
-</section>
-<h2 class="hello">Welcome back, MemeFi Pioneer 🛡️</h2>
-<p class="sub">This is your personal command deck for Memeless. Track referrals, earnings, token distribution, and upcoming milestones in one futuristic interface.</p>
-<div class="refgrid">
-<div class="tile"><div class="label">Referral Link</div><div class="value" id="refLink">{{ referral_link if referral_link else 'https://memeless.app/ref/XXXXXX' }}</div><button class="btn" id="copyRef">Copy Link</button></div>
-<div class="tile"><div class="label">Total Referrals</div><div class="value" id="refTotal">{{ referral_count if referral_count is defined else 0 }}</div></div>
-<div class="tile"><div class="label">Referral Earnings</div><div class="value"><span id="refEarn">{{ referral_earnings if referral_earnings is defined else 0 }}</span> MEME</div><div style="display:flex;gap:10px;align-items:center;margin-top:10px"><button class="btn accent" id="claimBtn">Claim Airdrop</button><small style="color:var(--muted)">* Claim will be enabled at TGE</small></div></div>
-
-<section id="airdrop-info" class="card reveal">
-  <h2>How to Claim MEME?</h2>
-  <p>
-    MEME is the governance token of the Memeless ecosystem — built to reward early community
+  </style>
+  <div class="floating-shortcuts">
+   <a href="#airdrop">
+    💰 Airdrop
+   </a>
+   <a href="#presale">
+    🚀 Presale
+   </a>
+  </div>
+  <!-- Add placeholder anchor sections if not present - content can be replaced in dashboard implementation -->
+  <canvas id="stars">
+  </canvas>
+  <div class="ticker-wrap">
+   <div class="ticker" id="ticker">
+   </div>
+  </div>
+  <header>
+   <nav class="nav">
+    <div class="brand">
+     <img alt="Memeless" class="logo" onerror="this.src='{{ url_for('static', filename='img/logo.svg') }}'" src="{{ url_for('static', filename='img/memeless-logo.png') }}"/>
+     <div class="title">
+      ME ME LESS — Control Center
+     </div>
+    </div>
+    <div class="nav-right" style="display:flex;gap:10px;align-items:center;">
+     <span class="btn" id="walletChip" style="background:#0b1220;border:1px solid rgba(255,255,255,.12)">
+      Wallet: --
+     </span>
+     <button class="btn" id="disconnectBtn" style="border-color:#ff4d4d">
+      Disconnect Wallet/Logout
+     </button>
+    </div>
+   </nav>
+  </header>
+  <marquee direction="left" height="100px" style=" color: #ffac02; " width="100%">
+   <b>
+    Binance
+   </b>
+   will list
+   <b>
+    MEMELESS (MEME) at 2025-10-31 14:00 (UTC)
+   </b>
+  </marquee>
+  <main>
+   <section class="card hero-grid reveal">
+    <div>
+     <section aria-label="Airdrop Section" id="airdrop">
+      <h2>
+       💰 Airdrop Live
+      </h2>
+      <p>
+       Claim airdrop tokens and view eligibility criteria here.
+      </p>
+     </section>
+     <h2 class="hello">
+      Welcome back, MemeFi Pioneer 🛡️
+     </h2>
+     <p class="sub">
+      This is your personal command deck for Memeless. Track referrals, earnings, token distribution, and upcoming milestones in one futuristic interface.
+     </p>
+     <div class="refgrid">
+      <div class="tile">
+       <div class="label">
+        Referral Link
+       </div>
+       <div class="value" id="refLink">
+        {{ referral_link if referral_link else 'https://memeless.app/ref/XXXXXX' }}
+       </div>
+       <button class="btn" id="copyRef">
+        Copy Link
+       </button>
+      </div>
+      <div class="tile">
+       <div class="label">
+        Total Referrals
+       </div>
+       <div class="value" id="refTotal">
+        {{ referral_count if referral_count is defined else 0 }}
+       </div>
+      </div>
+      <div class="tile">
+       <div class="label">
+        Referral Earnings
+       </div>
+       <div class="value">
+        <span id="refEarn">
+         {{ referral_earnings if referral_earnings is defined else 0 }}
+        </span>
+        MEME
+       </div>
+       <div style="display:flex;gap:10px;align-items:center;margin-top:10px">
+        <button class="btn accent" id="claimBtn">
+         Claim Airdrop
+        </button>
+        <small style="color:var(--muted)">
+         * Claim will be enabled at TGE
+        </small>
+       </div>
+      </div>
+      <section class="card reveal" id="airdrop-info">
+       <h2>
+        How to Claim MEME?
+       </h2>
+       <p>
+        MEME is the governance token of the Memeless ecosystem — built to reward early community
     supporters and active participants. You can earn MEME tokens by joining the airdrop,
     referring friends, and holding during the presale phase.
-  </p>
-
-  <div class="airdrop-info-grid">
-    <div class="airdrop-box">
-      <h3>🎯 Airdrop Rules</h3>
-      <ul>
-        <li>Send a valid Solana wallet address to participate in the airdrop.</li>
-        <li>Each participant earns <strong>100 MEME tokens</strong> per referral.</li>
-        <li>You can invite up to <strong>50 friends</strong>.</li>
-        <li>Rewards will be distributed after the presale ends.</li>
-      </ul>
+       </p>
+       <div class="airdrop-info-grid">
+        <div class="airdrop-box">
+         <h3>
+          🎯 Airdrop Rules
+         </h3>
+         <ul>
+          <li>
+           Send a valid Solana wallet address to participate in the airdrop.
+          </li>
+          <li>
+           Each participant earns
+           <strong>
+            100 MEME tokens
+           </strong>
+           per referral.
+          </li>
+          <li>
+           You can invite up to
+           <strong>
+            50 friends
+           </strong>
+           .
+          </li>
+          <li>
+           Rewards will be distributed after the presale ends.
+          </li>
+         </ul>
+        </div>
+        <div class="airdrop-box">
+         <h3>
+          📜 Airdrop Details
+         </h3>
+         <ul>
+          <li>
+           The MEME airdrop ends on
+           <strong>
+            October 31, 2025
+           </strong>
+           .
+          </li>
+          <li>
+           Distribution begins right after the presale period.
+          </li>
+          <li>
+           Detected fraudulent or spam referrals will be disqualified.
+          </li>
+          <li>
+           All valid participants receive MEME directly to their wallets.
+          </li>
+         </ul>
+        </div>
+       </div>
+      </section>
+     </div>
     </div>
-
-    <div class="airdrop-box">
-      <h3>📜 Airdrop Details</h3>
-      <ul>
-        <li>The MEME airdrop ends on <strong>October 31, 2025</strong>.</li>
-        <li>Distribution begins right after the presale period.</li>
-        <li>Detected fraudulent or spam referrals will be disqualified.</li>
-        <li>All valid participants receive MEME directly to their wallets.</li>
-      </ul>
+    <div>
+     <div class="ring">
+      <svg height="180" width="180">
+       <circle cx="90" cy="90" fill="none" r="80" stroke="rgba(255,255,255,.12)" stroke-width="10">
+       </circle>
+       <circle cx="90" cy="90" fill="none" id="arc" r="80" stroke="url(#grad)" stroke-dasharray="502" stroke-dashoffset="0" stroke-linecap="round" stroke-width="12">
+       </circle>
+       <defs>
+        <lineargradient id="grad" x1="0" x2="1">
+         <stop offset="0%" stop-color="var(--blue)">
+         </stop>
+         <stop offset="100%" stop-color="var(--magenta)">
+         </stop>
+        </lineargradient>
+       </defs>
+      </svg>
+      <div class="t">
+       <div id="d">
+        --
+       </div>
+       <small>
+        days left
+       </small>
+      </div>
+     </div>
+     <p style="text-align:center;color:var(--muted);margin:10px 0 0">
+      Presale &amp; Airdrop end on
+      <b>
+       Oct 31, 2025 23:59 UTC
+      </b>
+     </p>
     </div>
-  </div>
-</section>
-
-</div>
-</div>
-<div>
-<div class="ring">
-<svg height="180" width="180"><circle cx="90" cy="90" fill="none" r="80" stroke="rgba(255,255,255,.12)" stroke-width="10"></circle><circle cx="90" cy="90" fill="none" id="arc" r="80" stroke="url(#grad)" stroke-dasharray="502" stroke-dashoffset="0" stroke-linecap="round" stroke-width="12"></circle><defs><lineargradient id="grad" x1="0" x2="1"><stop offset="0%" stop-color="var(--blue)"></stop><stop offset="100%" stop-color="var(--magenta)"></stop></lineargradient></defs></svg>
-<div class="t"><div id="d">--</div><small>days left</small></div>
-</div>
-<p style="text-align:center;color:var(--muted);margin:10px 0 0">Presale &amp; Airdrop end on <b>Oct 31, 2025 23:59 UTC</b></p>
-</div>
-</section>
-<section class="card reveal">
-<section aria-label="Presale Section" id="presale">
-<h2>🚀 Presale Live</h2>
-<p>Presale details, pricing and purchase instructions.</p>
-</section>
-<h3 style="margin:0 0 6px;color:var(--cyan)">Presale</h3>
-<p>Become an early holder of $MEME. During the presale, tokens are available at a fixed rate of <b>1 SOL = 10,000 MEME</b>. A future buy widget will be embedded here to support direct purchases via connected wallets (Solana &amp; EVM bridges). Unsold tokens at presale end will be <b>burned</b> to preserve scarcity and strengthen price discovery.</p>
-<div style="display:flex;gap:10px;align-items:center;margin-top:10px"><button class="btn accent">Open Buy Widget (soon)</button><small style="color:var(--muted)">Widget integrates post-audit.</small></div>
-</section><!-- ============================= -->
-<!-- Enhanced Presale Info Section -->
-<!-- ============================= -->
-<section id="presale-info" class="presale-enhanced">
-  <style>
-    /* === Presale Section Enhancement Styles (Auto-Themed) === */
+   </section>
+   <section class="card reveal">
+    <section aria-label="Presale Section" id="presale">
+     <h2>
+      🚀 Presale Live
+     </h2>
+     <p>
+      Presale details, pricing and purchase instructions.
+     </p>
+    </section>
+    <h3 style="margin:0 0 6px;color:var(--cyan)">
+     Presale
+    </h3>
+    <p>
+     Become an early holder of $MEME. During the presale, tokens are available at a fixed rate of
+     <b>
+      1 SOL = 10,000 MEME
+     </b>
+     . A future buy widget will be embedded here to support direct purchases via connected wallets (Solana &amp; EVM bridges). Unsold tokens at presale end will be
+     <b>
+      burned
+     </b>
+     to preserve scarcity and strengthen price discovery.
+    </p>
+    <div style="display:flex;gap:10px;align-items:center;margin-top:10px">
+     <button class="btn accent">
+      Open Buy Widget (soon)
+     </button>
+     <small style="color:var(--muted)">
+      Widget integrates post-audit.
+     </small>
+    </div>
+   </section>
+   <!-- ============================= -->
+   <!-- Enhanced Presale Info Section -->
+   <!-- ============================= -->
+   <section class="presale-enhanced" id="presale-info">
+    <style>
+     /* === Presale Section Enhancement Styles (Auto-Themed) === */
     :root {
       --accent: var(--theme-color, var(--primary, #6d9eff));
     }
@@ -624,67 +766,309 @@ html { scroll-behavior: smooth; }
         font-size: 1.15rem;
       }
     }
-  </style>
-
-  <!-- === Content Layout === -->
-  <div class="presale-grid">
-    <!-- Left Card: Rules -->
-    <div class="presale-card">
-      <h3><span class="icon">💼</span> Presale Rules</h3>
+    </style>
+    <!-- === Content Layout === -->
+    <div class="presale-grid">
+     <!-- Left Card: Rules -->
+     <div class="presale-card">
+      <h3>
+       <span class="icon">
+        💼
+       </span>
+       Presale Rules
+      </h3>
       <ul>
-        <li>The amount for presale is <strong>250,000,000 MEME</strong> tokens.</li>
-        <li>Presale time: <strong>2025-10-25 14:00 (UTC)</strong>.</li>
-        <li>Presale price: <strong>1 SOL = 10,000 MEME</strong>. Min buy <strong>0.2 SOL</strong>, Max buy <strong>100 SOL</strong>.</li>
-        <li>Use your connected wallet to send SOL to the presale contract. MEME tokens will be sent to your wallet instantly.</li>
+       <li>
+        The amount for presale is
+        <strong>
+         250,000,000 MEME
+        </strong>
+        tokens.
+       </li>
+       <li>
+        Presale time:
+        <strong>
+         2025-10-25 14:00 (UTC)
+        </strong>
+        .
+       </li>
+       <li>
+        Presale price:
+        <strong>
+         1 SOL = 10,000 MEME
+        </strong>
+        . Min buy
+        <strong>
+         0.2 SOL
+        </strong>
+        , Max buy
+        <strong>
+         100 SOL
+        </strong>
+        .
+       </li>
+       <li>
+        Use your connected wallet to send SOL to the presale contract. MEME tokens will be sent to your wallet instantly.
+       </li>
       </ul>
-    </div>
-
-    <!-- Right Card: Details -->
-    <div class="presale-card">
-      <h3><span class="icon">🧩</span> Presale Details</h3>
+     </div>
+     <!-- Right Card: Details -->
+     <div class="presale-card">
+      <h3>
+       <span class="icon">
+        🧩
+       </span>
+       Presale Details
+      </h3>
       <ul>
-        <li>Distribution follows a <strong>first-come, first-served</strong> model based on transaction time.</li>
-        <li><strong>30%</strong> of raised funds will be locked in Solana & EVM liquidity pools.</li>
-        <li><strong>30%</strong> will support listings on major exchanges and ecosystem partnerships.</li>
-        <li><strong>40%</strong> of funds will be used for post-launch buybacks to stabilize price.</li>
-        <li>Anti-dump measures will ensure steady growth and protect early supporters.</li>
+       <li>
+        Distribution follows a
+        <strong>
+         first-come, first-served
+        </strong>
+        model based on transaction time.
+       </li>
+       <li>
+        <strong>
+         30%
+        </strong>
+        of raised funds will be locked in Solana &amp; EVM liquidity pools.
+       </li>
+       <li>
+        <strong>
+         30%
+        </strong>
+        will support listings on major exchanges and ecosystem partnerships.
+       </li>
+       <li>
+        <strong>
+         40%
+        </strong>
+        of funds will be used for post-launch buybacks to stabilize price.
+       </li>
+       <li>
+        Anti-dump measures will ensure steady growth and protect early supporters.
+       </li>
       </ul>
+     </div>
     </div>
-  </div>
-</section>
-<section class="card reveal">
-<h3 style="margin:0 0 6px;color:var(--cyan)">Tokenomics</h3>
-<p>Memeless ($MEME) is engineered with long-term community value in mind. Our allocation model balances <b>fair access</b>, <b>liquidity strength</b>, <b>ecosystem growth</b>, and <b>sustainable incentives</b>. Each category below includes a dynamic indicator reflecting its proportion of the total 1,000,000,000 MEME supply.</p>
-<div class="token-bars">
-<div class="bar"><b>Presale — 25%</b><div class="bar-line"><span data-w="25"></span></div></div>
-<div class="bar"><b>Airdrop — 15%</b><div class="bar-line"><span data-w="15"></span></div></div>
-<div class="bar"><b>Liquidity — 30%</b><div class="bar-line"><span data-w="30"></span></div></div>
-<div class="bar"><b>Team &amp; Development — 20% (12m vesting)</b><div class="bar-line"><span data-w="20"></span></div></div>
-<div class="bar"><b>Marketing &amp; Partnerships — 10%</b><div class="bar-line"><span data-w="10"></span></div></div>
-</div>
-</section>
-<section class="card reveal">
-<h3 style="margin:0 0 6px;color:var(--cyan)">Roadmap</h3>
-<p>The Memeless journey is paced across milestone-driven phases. Each phase unlocks utility, accessibility, and community power-ups.</p>
-<details><summary>Phase 1 — Genesis &amp; Community Formation</summary><ul><li>Token launch, website, branding, and socials</li><li>Presale activation + airdrop eligibility</li><li>Referral infrastructure and dashboard release</li></ul></details>
-<details><summary>Phase 2 — Liquidity &amp; Staking</summary><ul><li>DEX listing with strong liquidity</li><li>Staking vaults and early-yield boosters</li><li>Ambassador / KOL onboarding</li></ul></details>
-<details><summary>Phase 3 — NFT &amp; Ecosystem Expansion</summary><ul><li>Meme-themed NFT drops with utility</li><li>Mini-games and leaderboard rewards</li><li>Cross-project partnerships</li></ul></details>
-<details><summary>Phase 4 — Mass Adoption &amp; Metaverse</summary><ul><li>CEX listings (targeted)</li><li>Metaverse MemeFi hub</li><li>Global community campaigns</li></ul></details>
-</section>
-<section class="card reveal">
-<h3 style="margin:0 0 6px;color:var(--cyan)">Backed By</h3>
-<p>Memeless is supported by a growing network of builders, creators, and liquidity allies. Logos below are placeholders — your partner roster will glow here with pride.</p>
-<div class="partners"><div class="partner">Partner A</div><div class="partner">Partner B</div><div class="partner">Partner C</div><div class="partner">Partner D</div></div>
-</section>
-</main>
-<footer>
-<h3 style="margin:0 0 12px">Follow Memeless</h3>
-<div class="social"><a aria-label="Twitter" href="https://twitter.com/Dolomite_io"><span>🐦</span><span>Twitter</span></a><a aria-label="Telegram" href="https://t.me/dolomite_official"><span>✈️</span><span>Telegram</span></a><a aria-label="Discord" href="https://discord.gg/uDRzrB2YgP"><span>🟣</span><span>Discord</span></a><a aria-label="GitHub" href="https://github.com/dolomite-exchange"><span>🐙</span><span>GitHub</span></a></div>
-<div class="copyright">© <span id="yy"></span> Memeless — All rights reserved.</div>
-</footer>
-<audio id="amb" loop="" preload="auto"><source src="https://cdn.pixabay.com/download/audio/2022/10/18/audio_3e4f6a8a2b.mp3?filename=ambient-113172.mp3" type="audio/mpeg"/></audio>
-<script>
-document.getElementById('yy').textContent=new Date().getFullYear();
+   </section>
+   <section class="card reveal">
+    <h3 style="margin:0 0 6px;color:var(--cyan)">
+     Tokenomics
+    </h3>
+    <p>
+     Memeless ($MEME) is engineered with long-term community value in mind. Our allocation model balances
+     <b>
+      fair access
+     </b>
+     ,
+     <b>
+      liquidity strength
+     </b>
+     ,
+     <b>
+      ecosystem growth
+     </b>
+     , and
+     <b>
+      sustainable incentives
+     </b>
+     . Each category below includes a dynamic indicator reflecting its proportion of the total 1,000,000,000 MEME supply.
+    </p>
+    <div class="token-bars">
+     <div class="bar">
+      <b>
+       Presale — 25%
+      </b>
+      <div class="bar-line">
+       <span data-w="25">
+       </span>
+      </div>
+     </div>
+     <div class="bar">
+      <b>
+       Airdrop — 15%
+      </b>
+      <div class="bar-line">
+       <span data-w="15">
+       </span>
+      </div>
+     </div>
+     <div class="bar">
+      <b>
+       Liquidity — 30%
+      </b>
+      <div class="bar-line">
+       <span data-w="30">
+       </span>
+      </div>
+     </div>
+     <div class="bar">
+      <b>
+       Team &amp; Development — 20% (12m vesting)
+      </b>
+      <div class="bar-line">
+       <span data-w="20">
+       </span>
+      </div>
+     </div>
+     <div class="bar">
+      <b>
+       Marketing &amp; Partnerships — 10%
+      </b>
+      <div class="bar-line">
+       <span data-w="10">
+       </span>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="card reveal">
+    <h3 style="margin:0 0 6px;color:var(--cyan)">
+     Roadmap
+    </h3>
+    <p>
+     The Memeless journey is paced across milestone-driven phases. Each phase unlocks utility, accessibility, and community power-ups.
+    </p>
+    <details>
+     <summary>
+      Phase 1 — Genesis &amp; Community Formation
+     </summary>
+     <ul>
+      <li>
+       Token launch, website, branding, and socials
+      </li>
+      <li>
+       Presale activation + airdrop eligibility
+      </li>
+      <li>
+       Referral infrastructure and dashboard release
+      </li>
+     </ul>
+    </details>
+    <details>
+     <summary>
+      Phase 2 — Liquidity &amp; Staking
+     </summary>
+     <ul>
+      <li>
+       DEX listing with strong liquidity
+      </li>
+      <li>
+       Staking vaults and early-yield boosters
+      </li>
+      <li>
+       Ambassador / KOL onboarding
+      </li>
+     </ul>
+    </details>
+    <details>
+     <summary>
+      Phase 3 — NFT &amp; Ecosystem Expansion
+     </summary>
+     <ul>
+      <li>
+       Meme-themed NFT drops with utility
+      </li>
+      <li>
+       Mini-games and leaderboard rewards
+      </li>
+      <li>
+       Cross-project partnerships
+      </li>
+     </ul>
+    </details>
+    <details>
+     <summary>
+      Phase 4 — Mass Adoption &amp; Metaverse
+     </summary>
+     <ul>
+      <li>
+       CEX listings (targeted)
+      </li>
+      <li>
+       Metaverse MemeFi hub
+      </li>
+      <li>
+       Global community campaigns
+      </li>
+     </ul>
+    </details>
+   </section>
+   <section class="card reveal">
+    <h3 style="margin:0 0 6px;color:var(--cyan)">
+     Backed By
+    </h3>
+    <p>
+     Memeless is supported by a growing network of builders, creators, and liquidity allies. Logos below are placeholders — your partner roster will glow here with pride.
+    </p>
+    <div class="partners">
+     <div class="partner">
+      Partner A
+     </div>
+     <div class="partner">
+      Partner B
+     </div>
+     <div class="partner">
+      Partner C
+     </div>
+     <div class="partner">
+      Partner D
+     </div>
+    </div>
+   </section>
+  </main>
+  <footer>
+   <h3 style="margin:0 0 12px">
+    Follow Memeless
+   </h3>
+   <div class="social">
+    <a aria-label="Twitter" href="https://twitter.com/Dolomite_io">
+     <span>
+      🐦
+     </span>
+     <span>
+      Twitter
+     </span>
+    </a>
+    <a aria-label="Telegram" href="https://t.me/dolomite_official">
+     <span>
+      ✈️
+     </span>
+     <span>
+      Telegram
+     </span>
+    </a>
+    <a aria-label="Discord" href="https://discord.gg/uDRzrB2YgP">
+     <span>
+      🟣
+     </span>
+     <span>
+      Discord
+     </span>
+    </a>
+    <a aria-label="GitHub" href="https://github.com/dolomite-exchange">
+     <span>
+      🐙
+     </span>
+     <span>
+      GitHub
+     </span>
+    </a>
+   </div>
+   <div class="copyright">
+    ©
+    <span id="yy">
+    </span>
+    Memeless — All rights reserved.
+   </div>
+  </footer>
+  <audio id="successSound" loop="" preload="auto">
+   <source src="assets/sounds/success.mp3" type="audio/mp3"/>
+  </audio>
+  <script>
+   document.getElementById('yy').textContent=new Date().getFullYear();
 async function loadPrices(){try{const r=await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,binancecoin,solana,dogecoin&vs_currencies=usd&include_24hr_change=true',{cache:'no-store'});const j=await r.json();const map=[['BTC','bitcoin'],['ETH','ethereum'],['BNB','binancecoin'],['SOL','solana'],['DOGE','dogecoin']];const el=document.getElementById('ticker');el.innerHTML=map.map(([s,id])=>{const p=j[id]?.usd??0;const ch=j[id]?.usd_24h_change??0;const cls=ch>=0?'up':'down';const sign=ch>=0?'+':'';return `<div class='pair'><small>${s}</small><span class='chip'>$${p.toLocaleString(undefined,{maximumFractionDigits:p<1?6:2})}</span><small class='${cls}'>${sign}${ch.toFixed(2)}%</small></div>`;}).join('');}catch(e){console.warn(e)}}
 loadPrices(); setInterval(loadPrices,60000);
 (function(){const end=Date.parse('2025-10-31T23:59:00Z');const arc=document.getElementById('arc');const dEl=document.getElementById('d');const C=2*Math.PI*80;arc.setAttribute('stroke-dasharray',C);function tick(){const now=Date.now();const total=end-(new Date('2025-01-01T00:00:00Z')).getTime();const remain=Math.max(0,end-now);const prog=Math.min(1,1-remain/total);const off=(1-prog)*C;arc.setAttribute('stroke-dashoffset',off.toFixed(2));const days=Math.floor(remain/86400000);dEl.textContent=days}tick();setInterval(tick,1000)})();
@@ -693,10 +1077,11 @@ document.getElementById('copyRef').addEventListener('click',async()=>{try{const 
 document.getElementById('claimBtn').addEventListener('click',()=>toast('⏳ Claim functionality unlocks at TGE','info'));
 function toast(message,type='info'){const t=document.createElement('div');t.textContent=message;t.style.position='fixed';t.style.bottom='18px';t.style.left='50%';t.style.transform='translateX(-50%)';t.style.padding='10px 16px';t.style.borderRadius='12px';t.style.zIndex=10000;t.style.color='#fff';t.style.background=type==='error'?'#ff4d4d':(type==='success'?'#3ddc97':'#2a77ff');t.style.boxShadow='0 8px 24px rgba(0,0,0,.35)';document.body.appendChild(t);setTimeout(()=>t.remove(),2200)}
 const tips=['Tip: Share your referral link to boost rewards.','Security: Always verify contract links on Solscan.','Alpha: Presale buyers get early access to staking.','Community: Join Discord for quests and giveaways.'];let tipi=0;const tipBox=document.createElement('div');tipBox.className='tips';tipBox.innerHTML=`<h4>Quick Insights</h4><p id="tip">${tips[0]}</p>`;document.body.appendChild(tipBox);setInterval(()=>{tipi=(tipi+1)%tips.length;document.getElementById('tip').textContent=tips[tipi]},10000);
-</script>
-<script src="{{ url_for('static', filename='js/wallet.js') }}"></script>
-<script>
-document.addEventListener('DOMContentLoaded', ()=>{
+  </script>
+  <script src="{{ url_for('static', filename='js/wallet.js') }}">
+  </script>
+  <script>
+   document.addEventListener('DOMContentLoaded', ()=>{
   const chip = document.getElementById('walletChip');
   const saved = (window.MemelessWallet && window.MemelessWallet.get && window.MemelessWallet.get()) || null;
   function shorten(a){ return a ? a.slice(0,6)+'…'+a.slice(-4) : '--'; }
@@ -714,10 +1099,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
     if (e.target && e.target.id === 'discConfirm'){ closeModal(); if(window.MemelessWallet) window.MemelessWallet.disconnect(); }
   });
 });
-</script>
-<!-- Scroll to Top Button -->
-<style>
-#scrollTopBtn {
+  </script>
+  <!-- Scroll to Top Button -->
+  <style>
+   #scrollTopBtn {
   display:none;
   position:fixed;
   bottom:25px;
@@ -737,10 +1122,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
 #scrollTopBtn:hover {
   box-shadow:0 0 15px #0ff;
 }
-</style>
-<button id="scrollTopBtn" title="Go to top">↑</button>
-<script>
-const scrollBtn = document.getElementById("scrollTopBtn");
+  </style>
+  <button id="scrollTopBtn" title="Go to top">
+   ↑
+  </button>
+  <script>
+   const scrollBtn = document.getElementById("scrollTopBtn");
 window.addEventListener("scroll", () => {
   if (document.documentElement.scrollTop > 400) {
     scrollBtn.style.display = "block";
@@ -751,17 +1138,27 @@ window.addEventListener("scroll", () => {
 scrollBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
-</script>
-<!-- Memeless Footer Bar -->
-<footer class="memeless-footer">
-<a href="/contact" title="Contact Us">✉️</a>
-<a href="/terms" title="Terms &amp; Conditions">📜</a>
-<a href="/cookies" title="Cookies Policy">🍪</a>
-<a href="/faq" title="FAQs">❓</a>
-<a href="/testimonials" title="Testimonials">💬</a>
-</footer>
-<style>
-.memeless-footer {
+  </script>
+  <!-- Memeless Footer Bar -->
+  <footer class="memeless-footer">
+   <a href="/contact" title="Contact Us">
+    ✉️
+   </a>
+   <a href="/terms" title="Terms &amp; Conditions">
+    📜
+   </a>
+   <a href="/cookies" title="Cookies Policy">
+    🍪
+   </a>
+   <a href="/faq" title="FAQs">
+    ❓
+   </a>
+   <a href="/testimonials" title="Testimonials">
+    💬
+   </a>
+  </footer>
+  <style>
+   .memeless-footer {
   position: fixed;
   bottom: 10px;
   left: 50%;
@@ -795,9 +1192,9 @@ scrollBtn.addEventListener("click", () => {
   text-shadow: 0 0 12px #0ff;
   transform: scale(1.15);
 }
-</style>
-<script type="application/ld+json">
-{
+  </style>
+  <script type="application/ld+json">
+   {
  "@context": "https://schema.org",
  "@type": "WebPage",
  "name": "Memeless Dashboard",
@@ -807,9 +1204,9 @@ scrollBtn.addEventListener("click", () => {
    { "@type": "WebPageElement", "name": "Presale Section", "url": "{{ request.url_root }}dashboard#presale" }
  ]
 }
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
+  </script>
+  <script>
+   document.addEventListener("DOMContentLoaded", () => {
   const hash = window.location.hash;
   if (hash === "#airdrop") {
     const target = document.querySelector("#airdrop");
@@ -820,10 +1217,9 @@ document.addEventListener("DOMContentLoaded", () => {
     target?.scrollIntoView({ behavior: "smooth" });
   }
 });
-</script>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
+  </script>
+  <script>
+   document.addEventListener("DOMContentLoaded", () => {
   const themeToggle = document.createElement("button");
   themeToggle.id = "theme-toggle";
   themeToggle.className = "theme-toggle";
@@ -840,11 +1236,9 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("theme", next);
   });
 });
-</script>
-
-
-<script>
-// Smart UI - Dashboard helpers
+  </script>
+  <script>
+   // Smart UI - Dashboard helpers
 (function(){
   // Toast helper
   const toastRoot = document.createElement('div');
@@ -934,6 +1328,39 @@ document.addEventListener("DOMContentLoaded", () => {
     showToast
   };
 })();
-</script>
+  </script>
+  <script>
+   document.addEventListener('DOMContentLoaded', () => {
+  const shortcuts = document.querySelector('.floating-shortcuts');
+  if (!shortcuts) return;
 
-</body></html>
+  let lastScroll = 0;
+
+  // Hide/Show logic on scroll
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.scrollY;
+
+    if (currentScroll > lastScroll && currentScroll > 100) {
+      shortcuts.style.opacity = '0';
+      shortcuts.style.transform = 'translateY(60px)';
+    } else {
+      shortcuts.style.opacity = '1';
+      shortcuts.style.transform = 'translateY(0)';
+    }
+
+    lastScroll = currentScroll;
+  });
+
+  // Adjust position dynamically for small screens
+  const adjustPosition = () => {
+    const bottomOffset = window.innerWidth <= 768 ? 80 : 20;
+    shortcuts.style.bottom = `${bottomOffset}px`;
+  };
+
+  adjustPosition();
+  window.addEventListener('resize', adjustPosition);
+});
+  </script>
+ </body>
+</html>
+
