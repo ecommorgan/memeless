@@ -1,0 +1,26 @@
+User-agent: *
+Disallow: /auth
+Disallow: /api
+
+# ✅ Explicitly allowed public pages
+Allow: /
+Allow: /dashboard
+Allow: /contact
+Allow: /cookies
+Allow: /faq
+Allow: /terms
+Allow: /testimonials
+Allow: /login
+Allow: /register
+Allow: /airdrop
+Allow: /presale
+
+Crawl-delay: 10
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-Mobile
+Allow: /
+
+Sitemap: https://memeless.io/sitemap.xml
