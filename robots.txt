@@ -23,4 +23,4 @@ Allow: /
 User-agent: Googlebot-Mobile
 Allow: /
 
-Sitemap: https://kiteairdrop.org/sitemap.xml
+Sitemap: https://kiteairdrop.org/static/sitemap.xml
