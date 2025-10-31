@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, jsonify, session, redirect, u
 from werkzeug.security import generate_password_hash, check_password_hash
 import sqlite3, os, traceback
 
-REFERRAL_BONUS = 121
+REFERRAL_BONUS = 300
 DB_FILE = "users.db"
 
 app = Flask(__name__)
