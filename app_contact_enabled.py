@@ -115,7 +115,7 @@ def login():
             return jsonify({'status': 'error', 'message': 'All fields required'}), 400
         user = get_user_by_wallet(wallet)
         if not user or not user[2]:
-            return jsonify({'status': 'error', 'message': 'Wallet not registered or no password'}), 401
+            return jsonify({'status': 'error', 'message': 'Wallet not registered or wrong password'}), 401
         if not check_password_hash(user[2], password):
             return jsonify({'status': 'error', 'message': 'Incorrect password'}), 401
         session['wallet_address'] = wallet
